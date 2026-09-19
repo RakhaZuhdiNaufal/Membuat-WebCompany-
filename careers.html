@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karir & Peluang — KOPI SENJA</title>
+  <meta name="description" content="Bergabunglah dengan tim Kopi Senja. Bekerja di lingkungan kreatif, seni seduh kopi artisanal, dan jenjang karir terbuka.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #2B211C;
+      --secondary: #6B4F3A;
+      --bg: #F5EFEB;
+      --surface: #FFFDF9;
+      --accent: #C69C6D;
+      --text: #2A2521;
+      --muted: #8B8178;
+      --border: #E3D9CE;
+
+      --font-display: 'Anton', 'Playfair Display', Georgia, sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* HEADER */
+    .brewed-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(245, 239, 235, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(43, 33, 28, 0.08);
+      padding: 18px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #2B211C 0%, #543E2E 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #E6CBB2;
+      box-shadow: 0 4px 12px rgba(43, 33, 28, 0.15);
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      letter-spacing: 1.5px;
+      color: var(--primary);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+        .nav-center-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+    .nav-center-menu li {
+      position: relative;
+    }
+    .nav-center-menu a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #63584F;
+      text-decoration: none;
+      transition: color 0.25s ease, transform 0.25s ease;
+      padding: 6px 4px;
+      display: inline-block;
+      position: relative;
+      z-index: 2;
+    }
+    .nav-center-menu a:hover {
+      color: var(--primary);
+    }
+    .nav-center-menu a.active {
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .nav-glider {
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      height: 2.5px;
+      background: linear-gradient(90deg, var(--secondary), var(--primary));
+      border-radius: 9999px;
+      box-shadow: 0 2px 8px rgba(43, 33, 28, 0.25);
+      transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                  width 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                  opacity 0.25s ease;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0;
+      transform: translateX(0);
+    }
+
+    .lang-divider-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      user-select: none;
+    }
+
+    .lang-toggle-link {
+      padding: 4px 4px;
+      color: #9E958C;
+      font-size: 0.96rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .lang-toggle-link:hover { color: var(--primary); }
+    .lang-toggle-link.active { color: var(--primary); font-weight: 800; }
+    .lang-pipe-divider { color: #CCC3B6; font-weight: 300; font-size: 1.05rem; }
+
+    /* HERO GRID */
+    .career-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 80px 0 60px;
+    }
+    .career-hero-img-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(43, 33, 28, 0.08);
+    }
+    .career-hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      display: block;
+    }
+    .career-hero-content {
+      text-align: left;
+    }
+    @media (max-width: 960px) {
+      .career-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+      }
+      .career-hero-content {
+        text-align: center;
+      }
+    }
+
+    .page-tagline {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .page-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      color: var(--primary);
+      line-height: 1.2;
+      margin: 0 0 20px;
+    }
+
+    .page-desc {
+      font-size: 1.15rem;
+      color: #5C524A;
+      line-height: 1.7;
+    }
+
+    /* TIMELINE SECTION */
+    .timeline-section {
+      background-color: #E3D9CE; /* Light border color requested by user */
+      color: var(--primary);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      padding: 0 24px;
+    }
+
+    /* The vertical dashed line (Hidden in favor of zig-zag) */
+    .timeline-container::before {
+      display: none;
+    }
+
+    .timeline-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 90px;
+      position: relative;
+      width: 100%;
+      z-index: 2;
+    }
+
+    /* Zig-Zag Timeline Curves (Perfect Continuous Sine Wave) */
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px; /* Lebar gelombang optimal */
+      height: calc(100% + 90px);
+      z-index: 1;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+
+    /* Ganjil melengkung ke kanan */
+    .timeline-item:nth-child(odd)::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M 50 0 C 75 18, 100 32, 100 50 C 100 68, 75 82, 50 100' fill='none' stroke='%23C69C6D' stroke-width='3' stroke-dasharray='4,7' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+    }
+
+    /* Genap melengkung ke kiri */
+    .timeline-item:nth-child(even)::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M 50 0 C 25 18, 0 32, 0 50 C 0 68, 25 82, 50 100' fill='none' stroke='%23C69C6D' stroke-width='3' stroke-dasharray='4,7' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+    }
+
+    /* Item terakhir tidak perlu garis penghubung ke bawah */
+    .timeline-item:last-child::before {
+      display: none;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-node {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 52px;
+      height: 52px;
+      background-color: #E3D9CE;
+      border: 1.5px solid var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.15rem;
+      box-shadow: 0 0 20px rgba(43, 33, 28, 0.1);
+      z-index: 3;
+    }
+
+    .timeline-item > div:not(.timeline-node) {
+      width: 43%;
+    }
+
+    .timeline-img-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .timeline-img-wrap img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .timeline-img-wrap:hover img {
+      transform: scale(1.05);
+    }
+
+    .timeline-title {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .timeline-desc {
+      font-size: 1.05rem;
+      color: #5C524A; /* Muted dark text */
+      line-height: 1.6;
+    }
+
+    .left-img .timeline-text-container {
+      text-align: left;
+    }
+
+    .right-img .timeline-text-container {
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-section {
+        padding: 60px 0;
+      }
+      .timeline-container::before {
+        left: 36px;
+        transform: none;
+      }
+      .timeline-node {
+        left: 36px;
+        transform: translate(-50%, -50%);
+      }
+      .timeline-item {
+        flex-direction: column !important;
+        align-items: flex-start;
+        padding-left: 80px;
+        margin-bottom: 60px;
+      }
+      .timeline-item > div:not(.timeline-node) {
+        width: 100%;
+        text-align: left !important;
+      }
+      .timeline-img-container {
+        order: 1;
+        margin-bottom: 24px;
+      }
+      .timeline-text-container {
+        order: 2;
+      }
+    }
+
+    /* JOBS SECTION */
+    .jobs-section {
+      background: var(--surface);
+      padding: 90px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .jobs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .job-card {
+      background: var(--bg);
+      padding: 36px 32px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+
+    .job-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 10px 28px rgba(43,33,28,0.06);
+    }
+
+    .job-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      background: rgba(107, 79, 58, 0.12);
+      color: var(--secondary);
+      margin-bottom: 12px;
+    }
+
+    .job-title {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .job-desc {
+      font-size: 0.95rem;
+      color: #5C524A;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .job-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 24px;
+    }
+
+    .btn-apply {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--secondary);
+      color: var(--surface);
+      padding: 12px 24px;
+      border-radius: 9999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-apply:hover {
+      background: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* LOWONGAN PEKERJAAN SECTION */
+    .jobs-section {
+      padding: 0 0 100px;
+      background-color: #E3D9CE; /* Ngikutin background timeline di atas */
+    }
+    
+    .jobs-card {
+      background: var(--bg); /* Bukan putih murni */
+      border: 1px solid rgba(43, 33, 28, 0.1);
+      border-radius: 24px;
+      padding: 48px;
+      box-shadow: none; /* Dihapus agar tidak melayang */
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .jobs-title {
+      font-family: var(--font-sans); /* Kembali ke sans-serif agar mirip referensi */
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 24px;
+    }
+
+    .jobs-table {
+      width: 100%;
+    }
+
+    .jobs-header {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr 1fr 40px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(43, 33, 28, 0.15);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--secondary);
+    }
+
+    .job-row {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr 1fr 40px;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(43, 33, 28, 0.08);
+      text-decoration: none;
+      color: #5C524A;
+      font-size: 0.9rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .job-row:last-child {
+      border-bottom: none;
+    }
+
+    .job-row:hover {
+      background-color: rgba(43, 33, 28, 0.04);
+      border-radius: 6px;
+      padding-left: 12px;
+      margin-left: -12px;
+    }
+
+    .job-row .col-title {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .arrow-btn {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(43, 33, 28, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--secondary);
+      transition: all 0.2s ease;
+    }
+
+    .arrow-btn svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .job-row:hover .arrow-btn {
+      background: var(--accent);
+      color: #FFF;
+    }
+
+    @media (max-width: 768px) {
+      .jobs-card {
+        padding: 32px 24px;
+      }
+      .jobs-header {
+        display: none;
+      }
+      .job-row {
+        grid-template-columns: 1fr 30px;
+        gap: 12px;
+        padding: 16px 0;
+      }
+      .job-row:hover {
+        padding-left: 0;
+        margin-left: 0;
+      }
+      .job-row .col-dept, .job-row .col-loc {
+        grid-column: 1 / 2;
+        font-size: 0.8rem;
+        color: #888;
+      }
+      .job-row .col-action {
+        grid-column: 2 / 3;
+        grid-row: 1 / 4;
+      }
+    }
+
+    /* FOOTER */
+    .landing-footer {
+      background: var(--primary);
+      color: var(--surface);
+      padding: 40px 0;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .landing-footer a {
+      color: var(--accent);
+      font-weight: 600;
+      margin-left: 8px;
+    }
+
+    @media (max-width: 900px) {
+      .perks-grid { grid-template-columns: repeat(2, 1fr); }
+      .jobs-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  
+  <style>
+    /* Smooth Premium Page Transition */
+    body {
+      animation: fadeInPage 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    @keyframes fadeInPage {
+      0% { opacity: 0; transform: translateY(12px) scale(0.995); filter: blur(3px); }
+      100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    }
+    body.fade-out {
+      opacity: 0 !important;
+      transform: translateY(-8px) scale(0.995) !important;
+      filter: blur(2px) !important;
+      transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="brewed-header">
+    <div class="container nav-inner">
+      <a href="landing.html" class="nav-brand">
+        <div class="brand-logo-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+            <line x1="6" y1="1" x2="6" y2="4"></line>
+            <line x1="10" y1="1" x2="10" y2="4"></line>
+            <line x1="14" y1="1" x2="14" y2="4"></line>
+          </svg>
+        </div>
+        <span class="brand-title">KOPI SENJA</span>
+      </a>
+
+      <ul class="nav-center-menu">
+        <li><a href="landing.html" data-i18n="navHome">Home</a></li>
+        <li><a href="about.html" data-i18n="navAbout">About Us</a></li>
+        <li><a href="Index.html" data-i18n="navMenu">Menu</a></li>
+        <li><a href="careers.html" class="active" data-i18n="navCareers">Karir</a></li>
+
+        <span class="nav-glider" id="navGlider"></span>
+      </ul>
+
+      <div class="nav-right-cluster">
+        <div class="lang-divider-switch" role="group" aria-label="Language Selector">
+          <button type="button" class="lang-toggle-link" id="langBtnEn" onclick="switchLanguage('en')">EN</button>
+          <span class="lang-pipe-divider" aria-hidden="true">|</span>
+          <button type="button" class="lang-toggle-link active" id="langBtnId" onclick="switchLanguage('id')">ID</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <section class="career-hero-grid container">
+      <!-- Sisi Kiri: Foto -->
+      <div class="career-hero-img-wrap reveal-on-scroll">
+        <img src="assets/roast-atelier.jpg" alt="Suasana Bar Kopi & Roastery Kopi Senja" loading="lazy">
+      </div>
+      
+      <!-- Sisi Kanan: Penjelasan -->
+      <div class="career-hero-content reveal-on-scroll" style="transition-delay: 0.1s;">
+        <span class="page-tagline" data-i18n="careerTagline">Peluang & Karir</span>
+        <h1 class="page-title" data-i18n="careerHeading">Tumbuh & Berkarya Bersama Tim Kopi Senja</h1>
+        <p class="page-desc" data-i18n="careerLead">Kami mencari pribadi berdedikasi yang mencintai seduhan kopi artisanal, seni pelayanan hangat, dan budaya inovasi kuliner.</p>
+      </div>
+    </section>
+
+    <!-- PERKS / TIMELINE SECTION -->
+    <section class="timeline-section">
+      <div class="timeline-container reveal-on-scroll">
+        
+        <!-- Step 1: Image Left, Text Right -->
+        <div class="timeline-item left-img reveal-on-scroll" style="transition-delay: 0.1s;">
+          <div class="timeline-node">1</div>
+          <div class="timeline-img-container">
+            <div class="timeline-img-wrap">
+              <img src="assets/trainee-barista.jpg" alt="Awal Merintis">
+            </div>
+          </div>
+          <div class="timeline-text-container">
+            <h3 class="timeline-title" data-i18n="perk1Title">Awal Merintis</h3>
+            <p class="timeline-desc" data-i18n="perk1Desc">Memulai langkah pertama. Mempelajari fondasi kopi, kalibrasi espresso, dan standar pelayanan hangat khas Kopi Senja.</p>
+          </div>
+        </div>
+
+        <!-- Step 2: Text Left, Image Right -->
+        <div class="timeline-item right-img reveal-on-scroll" style="transition-delay: 0.2s;">
+          <div class="timeline-node">2</div>
+          <div class="timeline-text-container">
+            <h3 class="timeline-title" data-i18n="perk2Title">Mengasah Keahlian</h3>
+            <p class="timeline-desc" data-i18n="perk2Desc">Lulus sertifikasi internal bar. Menguasai latte art, manual brew, dan menjaga konsistensi kualitas di setiap cangkir.</p>
+          </div>
+          <div class="timeline-img-container">
+            <div class="timeline-img-wrap">
+              <img src="assets/honing-skills-barista.jpg" alt="Mengasah Keahlian">
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Image Left, Text Right -->
+        <div class="timeline-item left-img reveal-on-scroll" style="transition-delay: 0.3s;">
+          <div class="timeline-node">3</div>
+          <div class="timeline-img-container">
+            <div class="timeline-img-wrap">
+              <img src="assets/flavor-exploration-menu.jpg" alt="Eksplorasi Rasa">
+            </div>
+          </div>
+          <div class="timeline-text-container">
+            <h3 class="timeline-title" data-i18n="perk3Title">Eksplorasi Rasa</h3>
+            <p class="timeline-desc" data-i18n="perk3Desc">Mempelajari food pairing dan standar penyajian pastry. Memastikan pengalaman kuliner yang paripurna.</p>
+          </div>
+        </div>
+
+        <!-- Step 4: Text Left, Image Right -->
+        <div class="timeline-item right-img reveal-on-scroll" style="transition-delay: 0.4s;">
+          <div class="timeline-node">4</div>
+          <div class="timeline-text-container">
+            <h3 class="timeline-title" data-i18n="perk4Title">Puncak Karir</h3>
+            <p class="timeline-desc" data-i18n="perk4Desc">Menjadi Store Manager atau Head Roaster. Merancang inovasi menu, mengelola operasional kedai, dan berkembang bersama kami.</p>
+          </div>
+          <div class="timeline-img-container">
+            <div class="timeline-img-wrap">
+              <img src="assets/roast-atelier.jpg" alt="Puncak Karir">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LOWONGAN PEKERJAAN -->
+    <section class="jobs-section">
+      <div class="container reveal-on-scroll">
+        <div class="jobs-card">
+          <h2 class="jobs-title">Lowongan Pekerjaan</h2>
+          
+          <div class="jobs-table">
+            <div class="jobs-header">
+              <div class="col-title">Job Title</div>
+              <div class="col-dept">Department</div>
+              <div class="col-loc">Location</div>
+              <div class="col-action"></div>
+            </div>
+            
+            <a href="#" class="job-row">
+              <div class="col-title">Area Manager</div>
+              <div class="col-dept">Operation</div>
+              <div class="col-loc">Indonesia</div>
+              <div class="col-action">
+                <div class="arrow-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+              </div>
+            </a>
+            
+            <a href="#" class="job-row">
+              <div class="col-title">Supervisor Store</div>
+              <div class="col-dept">Operation</div>
+              <div class="col-loc">Indonesia</div>
+              <div class="col-action">
+                <div class="arrow-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+              </div>
+            </a>
+            
+            <a href="#" class="job-row">
+              <div class="col-title">Barista (Part-Time)</div>
+              <div class="col-dept">Operation</div>
+              <div class="col-loc">Indonesia</div>
+              <div class="col-action">
+                <div class="arrow-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <style>
+    .new-footer {
+      background-color: var(--primary);
+      color: #A89F95;
+      padding: 80px 0 40px;
+      font-size: 0.95rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+    .footer-brand {
+      color: var(--surface);
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .footer-title {
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+    }
+    .footer-contact-item {
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .footer-contact-item span {
+      color: var(--surface);
+      font-weight: 600;
+    }
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    .footer-links a {
+      color: #A89F95;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+    @media (max-width: 960px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+      }
+    }
+  </style>
+
+  <footer class="new-footer live-server-trigger" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Column 1: Brand -->
+        <div>
+          <div class="footer-brand">KOPI SENJA</div>
+          <p style="line-height: 1.7; max-width: 320px; font-size: 0.9rem; margin-top: 10px;">
+            Menyajikan seduhan kopi artisanal terbaik untuk menemani setiap momen hangat Anda. Nikmati kekayaan cita rasa nusantara di setiap cangkir.
+          </p>
+        </div>
+
+        <!-- Column 2: Contact Info -->
+        <div>
+          <div class="footer-title">Hubungi Kami</div>
+          <div class="footer-contact-item" style="flex-direction: row; align-items: center; gap: 12px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span style="color: #A89F95; font-weight: 400;">+62 812-3456-7890</span>
+          </div>
+          <div class="footer-contact-item" style="flex-direction: row; align-items: center; gap: 12px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            <span style="color: #A89F95; font-weight: 400;">@kopisenja.id</span>
+          </div>
+          <div class="footer-contact-item" style="flex-direction: row; align-items: flex-start; gap: 12px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span style="color: #A89F95; font-weight: 400; line-height: 1.5;">Jl. Senopati Dalam No. 18, Jakarta Selatan</span>
+          </div>
+        </div>
+
+        <!-- Column 3: Links -->
+        <div>
+          <div class="footer-title">Jelajahi</div>
+          <ul class="footer-links">
+            <li><a href="landing.html" data-i18n="navHome">Home</a></li>
+            <li><a href="about.html" data-i18n="navAbout">About Us</a></li>
+            <li><a href="Index.html" data-i18n="navMenu">Menu</a></li>
+            <li><a href="careers.html" data-i18n="navCareers">Karir</a></li>
+
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 <strong>KOPI SENJA</strong>. All Rights Reserved.</div>
+        <div data-i18n="footerText">Terinspirasi dari estetika modern editorial.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    const translations = {
+      id: {
+        navHome: "Home",
+        navAbout: "About Us",
+        navMenu: "Menu",
+        navCareers: "Karir",
+        navContact: "Kontak",
+        careerTagline: "Peluang & Karir",
+        careerHeading: "Tumbuh & Berkarya Bersama Tim Kopi Senja",
+        careerLead: "Kami mencari pribadi berdedikasi yang mencintai seduhan kopi artisanal, seni pelayanan hangat, dan budaya inovasi kuliner.",
+        perk1Title: "Awal Merintis",
+        perk1Desc: "Memulai langkah pertama. Mempelajari fondasi kopi, kalibrasi espresso, dan standar pelayanan hangat khas Kopi Senja.",
+        perk2Title: "Mengasah Keahlian",
+        perk2Desc: "Lulus sertifikasi internal bar. Menguasai latte art, manual brew, dan menjaga konsistensi kualitas di setiap cangkir.",
+        perk3Title: "Eksplorasi Rasa",
+        perk3Desc: "Mempelajari food pairing dan standar penyajian pastry. Memastikan pengalaman kuliner yang paripurna.",
+        perk4Title: "Memimpin Bar",
+        perk4Desc: "Mengambil tanggung jawab operasional. Memimpin shift, membimbing junior barista, dan menjaga standar kualitas.",
+        perk5Title: "Manajemen Kedai",
+        perk5Desc: "Mengelola bisnis dan operasional harian. Bertanggung jawab atas target penjualan dan kenyamanan pelanggan.",
+        perk6Title: "Ahli Sangrai",
+        perk6Desc: "Mengontrol kualitas kopi dari hulu ke hilir. Menyortir, menyangrai, dan mendesain profil rasa khas Kopi Senja.",
+        perk7Title: "Puncak Karir",
+        perk7Desc: "Menjadi Area Manager atau Partner bisnis. Mengawal strategi ekspansi dan membangun budaya inovasi perusahaan.",
+        jobsTagline: "Lowongan Tersedia",
+        jobsHeading: "Pilih Posisi Impian Anda",
+        badgeFullTime: "Full Time",
+        badgePartTime: "Part Time / Internship",
+        job1Desc: "Memimpin operasional espresso bar, memantau kalibrasi seduhan setiap pagi, dan membimbing barista muda dalam seni microfoam serta manual brew.",
+        job2Desc: "Menciptakan viennoiserie, sourdough lembut, croissant mentega Prancis renyah, dan hidangan penutup signature Kopi Senja.",
+        job3Desc: "Memberikan pelayanan ramah, belajar dasar ekstraksi kopi dari barista berpengalaman, dan menjaga kebersihan area coffee bar.",
+        job4Desc: "Mengelola operasional harian gerai, mengawasi manajemen stok biji kopi, serta memastikan standar kepuasan pelanggan tetap optimal.",
+        locAll: "Semua Cabang Gerai",
+        btnApply: "Kirim Lamaran →",
+        footerText: "Terinspirasi dari estetika modern editorial.",
+        footerLink: "Buka Toko E-Commerce →"
+      },
+      en: {
+        navHome: "Home",
+        navAbout: "About Us",
+        navMenu: "Menu",
+        navCareers: "Careers",
+        navContact: "Contact",
+        careerTagline: "Careers & Opportunities",
+        careerHeading: "Grow & Create with the Kopi Senja Team",
+        careerLead: "We seek passionate individuals who love artisanal coffee craft, gracious hospitality, and a forward-thinking culinary culture.",
+        perk1Title: "Starting Out",
+        perk1Desc: "Taking the first step. Learning coffee fundamentals, espresso calibration, and Kopi Senja's warm hospitality standards.",
+        perk2Title: "Honing Skills",
+        perk2Desc: "Passing internal bar certification. Mastering latte art, manual brew, and maintaining quality consistency in every cup.",
+        perk3Title: "Flavor Exploration",
+        perk3Desc: "Learning food pairing and pastry presentation standards. Ensuring a complete culinary experience.",
+        perk4Title: "Leading the Bar",
+        perk4Desc: "Taking on operational responsibilities. Leading shifts, mentoring junior baristas, and maintaining quality standards.",
+        perk5Title: "Store Management",
+        perk5Desc: "Managing daily business and operations. Responsible for sales targets and overall customer comfort.",
+        perk6Title: "Roastery Mastery",
+        perk6Desc: "Controlling coffee quality from farm to cup. Sorting, roasting, and designing Kopi Senja's signature flavor profiles.",
+        perk7Title: "Career Peak",
+        perk7Desc: "Becoming an Area Manager or Business Partner. Driving expansion strategies and building a culture of innovation.",
+        jobsTagline: "Open Roles",
+        jobsHeading: "Find Your Ideal Role",
+        badgeFullTime: "Full Time",
+        badgePartTime: "Part Time / Internship",
+        job1Desc: "Lead espresso bar workflow, monitor daily dial-in parameters, and mentor junior team members in latte art and pour-overs.",
+        job2Desc: "Bake fresh viennoiserie, airy sourdough, flaky French butter croissants, and seasonal pastries.",
+        job3Desc: "Deliver warm customer hospitality, learn extraction fundamentals from senior baristas, and maintain clean bar stations.",
+        job4Desc: "Oversee daily store operations, coffee bean inventory logistics, and maintain elevated service standards.",
+        locAll: "All Outlet Branches",
+        btnApply: "Apply Now →",
+        footerText: "Inspired by clean modern editorial aesthetics.",
+        footerLink: "Open E-Commerce Store →"
+      }
+    };
+
+    function switchLanguage(lang) {
+      try { localStorage.setItem('kopi_senja_lang', lang); } catch (e) {}
+      applyLanguage(lang);
+    }
+
+    function applyLanguage(lang) {
+      const dict = translations[lang] || translations.id;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.textContent = dict[key];
+      });
+
+      const btnEn = document.getElementById('langBtnEn');
+      const btnId = document.getElementById('langBtnId');
+      if (lang === 'en') {
+        if (btnEn) btnEn.classList.add('active');
+        if (btnId) btnId.classList.remove('active');
+      } else {
+        if (btnId) btnId.classList.add('active');
+        if (btnEn) btnEn.classList.remove('active');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      let saved = 'id';
+      try { saved = localStorage.getItem('kopi_senja_lang') || 'id'; } catch (e) {}
+      applyLanguage(saved);
+    });
+  </script>
+
+  <!-- PAGE TRANSITION SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          // Only animate for internal HTML links
+          if (href && href.endsWith('.html') && !this.hasAttribute('target')) {
+            e.preventDefault();
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+              window.location.href = href;
+            }, 450); // Match animation length to feel responsive
+          }
+        });
+      });
+    });
+
+    // Fix for Safari/Firefox bfcache (back button)
+    window.addEventListener('pageshow', (event) => {
+      if (event.persisted) {
+        document.body.classList.remove('fade-out');
+      }
+    });
+  </script>
+
+  <!-- GLIDER SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navMenu = document.querySelector('.nav-center-menu');
+      const glider = document.getElementById('navGlider');
+      const navLinks = navMenu ? navMenu.querySelectorAll('a') : [];
+
+      function positionGliderTo(linkEl) {
+        if (!glider || !linkEl || !navMenu) return;
+        const menuRect = navMenu.getBoundingClientRect();
+        const linkRect = linkEl.getBoundingClientRect();
+        const leftOffset = linkRect.left - menuRect.left;
+        const width = linkRect.width;
+
+        glider.style.opacity = '1';
+        glider.style.width = `${width}px`;
+        glider.style.transform = `translateX(${leftOffset}px)`;
+      }
+
+      const activeLink = navMenu ? navMenu.querySelector('a.active') : null;
+      if (activeLink) {
+        setTimeout(() => positionGliderTo(activeLink), 120);
+      }
+
+      navLinks.forEach(link => {
+        link.addEventListener('mouseenter', () => positionGliderTo(link));
+      });
+
+      if (navMenu) {
+        navMenu.addEventListener('mouseleave', () => {
+          const currentActive = navMenu.querySelector('a.active');
+          if (currentActive) {
+            positionGliderTo(currentActive);
+          } else if (glider) {
+            glider.style.opacity = '0';
+          }
+        });
+      }
+
+      window.addEventListener('resize', () => {
+        const currentActive = navMenu ? navMenu.querySelector('a.active') : null;
+        if (currentActive) positionGliderTo(currentActive);
+      });
+    });
+  </script>
+
+</body>
+</html>

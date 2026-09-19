@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — KOPI SENJA</title>
+  <meta name="description" content="Menu lengkap Kopi Senja: Pilihan biji kopi terbaik, minuman non-kopi segar, dan aneka roti pilihan.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #2B211C;
+      --secondary: #6B4F3A;
+      --bg: #FFFFFF; /* Diubah dari beige ke putih bersih */
+      --surface: #FFFDF9;
+      --accent: #C69C6D;
+      --text: #2A2521;
+      --muted: #8B8178;
+      --border: #E3D9CE;
+
+      --font-display: 'Anton', 'Playfair Display', Georgia, sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* HEADER */
+    .brewed-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.94); /* Disesuaikan ke putih */
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(43, 33, 28, 0.08);
+      padding: 18px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #2B211C 0%, #543E2E 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #E6CBB2;
+      box-shadow: 0 4px 12px rgba(43, 33, 28, 0.15);
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      letter-spacing: 1.5px;
+      color: var(--primary);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+        .nav-center-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+    .nav-center-menu li {
+      position: relative;
+    }
+    .nav-center-menu a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #63584F;
+      text-decoration: none;
+      transition: color 0.25s ease, transform 0.25s ease;
+      padding: 6px 4px;
+      display: inline-block;
+      position: relative;
+      z-index: 2;
+    }
+    .nav-center-menu a:hover {
+      color: var(--primary);
+    }
+    .nav-center-menu a.active {
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .nav-glider {
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      height: 2.5px;
+      background: linear-gradient(90deg, var(--secondary), var(--primary));
+      border-radius: 9999px;
+      box-shadow: 0 2px 8px rgba(43, 33, 28, 0.25);
+      transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                  width 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                  opacity 0.25s ease;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0;
+      transform: translateX(0);
+    }
+
+    .lang-divider-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      user-select: none;
+    }
+
+    .lang-toggle-link {
+      padding: 4px 4px;
+      color: #9E958C;
+      font-size: 0.96rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .lang-toggle-link:hover { color: var(--primary); }
+    .lang-toggle-link.active { color: var(--primary); font-weight: 800; }
+    .lang-pipe-divider { color: #CCC3B6; font-weight: 300; font-size: 1.05rem; }
+
+    /* HERO ABOUT */
+    .page-hero {
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+
+    .page-tagline {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .page-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      color: var(--primary);
+      line-height: 1.2;
+      max-width: 860px;
+      margin: 0 auto 20px;
+    }
+
+    .page-desc {
+      font-size: 1.15rem;
+      color: #5C524A;
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* EDITORIAL STORY GRID */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin: 60px auto 100px;
+    }
+    
+    .story-content {
+      /* text-align: left; */
+    }
+    
+    .story-content p {
+      text-align: justify;
+    }
+
+    .story-img-wrap {
+      position: relative;
+    }
+
+    .story-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(43,33,28,0.12);
+    }
+
+    .story-content h2 {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+      line-height: 1.25;
+    }
+
+    .story-content p {
+      color: #4A423B;
+      font-size: 1.02rem;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    /* EXPERT SECTION */
+    .expert-section {
+      padding: 100px 0;
+    }
+
+    .expert-card {
+      background: #F2F5F2;
+      border-radius: 32px;
+      padding: 60px;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      box-shadow: 0 10px 40px rgba(43, 33, 28, 0.04);
+      border: 1px solid var(--border);
+    }
+
+    .expert-img-wrap {
+      position: relative;
+      flex-shrink: 0;
+      width: 320px;
+      height: 320px;
+    }
+
+    .expert-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 8px solid #FFF;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .expert-badge {
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #FFF;
+      padding: 16px 32px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(43,33,28,0.1);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .expert-badge strong {
+      display: block;
+      color: var(--primary);
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .expert-badge span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .expert-title {
+      font-family: var(--font-sans);
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: #1A362D;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .expert-desc {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #4A5550;
+      text-align: justify;
+    }
+
+    /* STATS ROW */
+    .metrics-bar {
+      display: flex;
+      justify-content: space-around;
+      padding: 60px 0;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .metric-item .val {
+      font-family: var(--font-display);
+      font-size: 3.2rem;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .metric-item .lbl {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    /* NEW FOOTER */
+    .new-footer {
+      background-color: var(--primary);
+      color: #A89F95;
+      padding: 80px 0 40px;
+      font-size: 0.95rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+    .footer-brand {
+      color: var(--surface);
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .footer-title {
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+    }
+    .footer-contact-item {
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .footer-contact-item span {
+      color: #A89F95;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    .footer-links a {
+      color: #A89F95;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 860px) {
+      .story-grid { grid-template-columns: 1fr; gap: 36px; }
+      .metrics-bar { flex-direction: column; gap: 32px; }
+      
+      .expert-card {
+        flex-direction: column;
+        padding: 40px 24px;
+        text-align: center;
+        gap: 50px;
+      }
+      .expert-img-wrap {
+        width: 260px;
+        height: 260px;
+      }
+      .expert-title {
+        font-size: 2.2rem;
+      }
+      .expert-desc {
+        text-align: center;
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+      }
+    }
+    /* MINIMAL MENU STYLES */
+    .minimal-menu {
+      padding: 80px 32px;
+      background-color: #FFF;
+      color: #333;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .menu-cat-section {
+      display: flex;
+      margin-bottom: 80px;
+      gap: 40px;
+    }
+
+    .cat-sidebar {
+      width: 120px;
+      flex-shrink: 0;
+      border-right: 1px solid #EAEAEA;
+      padding-right: 20px;
+    }
+
+    .cat-sidebar h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: #000;
+      margin-bottom: 30px;
+    }
+
+    .cat-icon-list {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .cat-icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: #999;
+      font-size: 0.8rem;
+    }
+
+    .cat-icon-item svg {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 8px;
+      stroke: #999;
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .cat-content {
+      flex: 1;
+    }
+
+    .drink-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px 30px;
+    }
+
+    .drink-item {
+      text-align: left;
+    }
+
+    .drink-img-wrap {
+      width: 100%;
+      aspect-ratio: 1;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .drink-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+
+    .drink-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: baseline;
+      margin-bottom: 8px;
+      gap: 6px;
+    }
+
+    .drink-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .drink-price {
+      font-size: 0.85rem;
+      color: #999;
+    }
+    
+    .drink-price::before {
+      content: "/ ";
+      color: #CCC;
+    }
+
+    .drink-desc {
+      font-size: 0.8rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .food-section {
+      display: flex;
+      gap: 60px;
+      margin-bottom: 80px;
+      margin-top: 40px;
+    }
+
+    .food-col {
+      flex: 1;
+    }
+
+    .food-col h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: #000;
+      margin-bottom: 30px;
+    }
+
+    .food-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .food-item-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+
+    .food-item-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .food-item-price {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .food-item-desc {
+      font-size: 0.8rem;
+      color: #888;
+      line-height: 1.4;
+      padding-right: 20px;
+    }
+
+    @media (max-width: 960px) {
+      .drink-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 20px; }
+      .menu-cat-section { flex-direction: column; gap: 20px; }
+      .cat-sidebar { width: 100%; border-right: none; border-bottom: 1px solid #EAEAEA; padding-bottom: 20px; display: flex; align-items: center; justify-content: space-between; }
+      .cat-sidebar h2 { margin-bottom: 0; }
+      .cat-icon-list { flex-direction: row; gap: 20px; }
+      .food-section { flex-direction: column; gap: 40px; }
+    }
+    @media (max-width: 500px) {
+      .drink-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  
+  <style>
+    /* Smooth Premium Page Transition */
+    body {
+      animation: fadeInPage 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    @keyframes fadeInPage {
+      0% { opacity: 0; transform: translateY(12px) scale(0.995); filter: blur(3px); }
+      100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    }
+    body.fade-out {
+      opacity: 0 !important;
+      transform: translateY(-8px) scale(0.995) !important;
+      filter: blur(2px) !important;
+      transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="brewed-header">
+    <div class="container nav-inner">
+      <a href="landing.html" class="nav-brand">
+        <div class="brand-logo-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+            <line x1="6" y1="1" x2="6" y2="4"></line>
+            <line x1="10" y1="1" x2="10" y2="4"></line>
+            <line x1="14" y1="1" x2="14" y2="4"></line>
+          </svg>
+        </div>
+        <span class="brand-title">KOPI SENJA</span>
+      </a>
+
+      <ul class="nav-center-menu">
+        <li><a href="landing.html" data-i18n="navHome">Home</a></li>
+        <li><a href="about.html" data-i18n="navAbout">About Us</a></li>
+        <li><a href="Index.html" class="active" data-i18n="navMenu">Menu</a></li>
+        <li><a href="careers.html" data-i18n="navCareers">Karir</a></li>
+
+        <span class="nav-glider" id="navGlider"></span>
+      </ul>
+
+      <div class="nav-right-cluster">
+        <div class="lang-divider-switch" role="group" aria-label="Language Selector">
+          <button type="button" class="lang-toggle-link" id="langBtnEn" onclick="switchLanguage('en')">EN</button>
+          <span class="lang-pipe-divider" aria-hidden="true">|</span>
+          <button type="button" class="lang-toggle-link active" id="langBtnId" onclick="switchLanguage('id')">ID</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="minimal-menu" style="background-color: #FFF; width: 100%;">
+    <!-- HOT SECTION -->
+    <div class="menu-cat-section">
+      <div class="cat-sidebar">
+        <h2>hot</h2>
+        <div class="cat-icon-list">
+          <div class="cat-icon-item">
+            <svg viewBox="0 0 24 24"><path d="M4 10h16M7 10V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4M5 20h14a2 2 0 0 0 2-2v-5H3v5a2 2 0 0 0 2 2z"/></svg>
+            Moka Pot
+          </div>
+          <div class="cat-icon-item">
+            <svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M6 10h12M12 2v8"/></svg>
+            French Press
+          </div>
+          <div class="cat-icon-item">
+            <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>
+            Espresso
+          </div>
+        </div>
+      </div>
+      <div class="cat-content">
+        <div class="drink-grid">
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup1.png" alt="Espresso" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Espresso</span>
+              <span class="drink-price">2.00</span>
+            </div>
+            <p class="drink-desc">Consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          </div>
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup2.png" alt="Double Espresso" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Double Espresso</span>
+              <span class="drink-price">2.50</span>
+            </div>
+            <p class="drink-desc">Reprehenderit in voluptate velit esse cillum dolore eu.</p>
+          </div>
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup3.png" alt="Americano" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Americano</span>
+              <span class="drink-price">3.00</span>
+            </div>
+            <p class="drink-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup4.png" alt="Flat White" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Flat White</span>
+              <span class="drink-price">3.50</span>
+            </div>
+            <p class="drink-desc">Quis nostrud exercitation ullamco laboris nisi.</p>
+          </div>
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup5.png" alt="Cafe Latte" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Cafe Latte</span>
+              <span class="drink-price">4.00</span>
+            </div>
+            <p class="drink-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup6.png" alt="Macchiato" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Macchiato</span>
+              <span class="drink-price">3.50</span>
+            </div>
+            <p class="drink-desc">Reprehenderit in voluptate velit esse cillum dolore eu.</p>
+          </div>
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup7.png" alt="Cappuccino" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Cappuccino</span>
+              <span class="drink-price">3.00</span>
+            </div>
+            <p class="drink-desc">Quis nostrud exercitation ullamco laboris nisi.</p>
+          </div>
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup8.png" alt="Frappuccino" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Frappuccino</span>
+              <span class="drink-price">4.50</span>
+            </div>
+            <p class="drink-desc">Consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLD SECTION -->
+    <div class="menu-cat-section">
+      <div class="cat-sidebar">
+        <h2>cold</h2>
+        <div class="cat-icon-list">
+          <div class="cat-icon-item">
+            <svg viewBox="0 0 24 24"><path d="M5 4h14l-1 12H6L5 4zM9 16v4M15 16v4M7 20h10"/></svg>
+            Aeropress
+          </div>
+          <div class="cat-icon-item">
+            <svg viewBox="0 0 24 24"><path d="M4 6h16M5 6v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6M9 2v4M15 2v4"/></svg>
+            Cold Brew
+          </div>
+        </div>
+      </div>
+      <div class="cat-content">
+        <div class="drink-grid">
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup9.png" alt="Affogato" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Affogato</span>
+              <span class="drink-price">6.00</span>
+            </div>
+            <p class="drink-desc">Reprehenderit in voluptate velit esse cillum dolore eu.</p>
+          </div>
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup10.png" alt="Macchiato Cold" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Macchiato</span>
+              <span class="drink-price">4.50</span>
+            </div>
+            <p class="drink-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup11.png" alt="Cappuccino Cold" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Cappuccino</span>
+              <span class="drink-price">5.00</span>
+            </div>
+            <p class="drink-desc">Quis nostrud exercitation ullamco laboris nisi.</p>
+          </div>
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup12.png" alt="Frappuccino Cold" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Frappuccino</span>
+              <span class="drink-price">5.50</span>
+            </div>
+            <p class="drink-desc">Consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOD & DESSERT SECTION -->
+    <div class="food-section">
+      <div class="food-col">
+        <h2>bread</h2>
+        <div class="food-list">
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="bread1Name">Butter Croissant</span>
+              <span class="food-item-price">4.50</span>
+            </div>
+            <p class="food-item-desc" data-i18n="bread1Desc">Classic flaky, buttery, and authentic French croissant.</p>
+          </div>
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="bread2Name">Almond Croissant</span>
+              <span class="food-item-price">5.50</span>
+            </div>
+            <p class="food-item-desc" data-i18n="bread2Desc">Twice-baked croissant filled with sweet almond frangipane.</p>
+          </div>
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="bread3Name">Pain au Chocolat</span>
+              <span class="food-item-price">5.00</span>
+            </div>
+            <p class="food-item-desc" data-i18n="bread3Desc">Buttery dough wrapped around rich, dark chocolate centers.</p>
+          </div>
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="bread4Name">Cinnamon Roll</span>
+              <span class="food-item-price">4.00</span>
+            </div>
+            <p class="food-item-desc" data-i18n="bread4Desc">Soft, fluffy dough baked with cinnamon and topped with cream cheese glaze.</p>
+          </div>
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="bread5Name">Classic Bagel</span>
+              <span class="food-item-price">3.50</span>
+            </div>
+            <p class="food-item-desc" data-i18n="bread5Desc">Toasted bagel served with your choice of plain or herb cream cheese.</p>
+          </div>
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="bread6Name">Sourdough Toast</span>
+              <span class="food-item-price">3.00</span>
+            </div>
+            <p class="food-item-desc" data-i18n="bread6Desc">Thick-cut sourdough bread served with artisanal butter and fruit jam.</p>
+          </div>
+        </div>
+      </div>
+      <div class="food-col">
+        <h2>dessert</h2>
+        <div class="food-list">
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="des1Name">Chocolate Waffle</span>
+              <span class="food-item-price">4.50</span>
+            </div>
+            <p class="food-item-desc" data-i18n="des1Desc">Warm Belgian waffle drizzled with melted dark chocolate.</p>
+          </div>
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="des2Name">Strawberry Waffle</span>
+              <span class="food-item-price">5.50</span>
+            </div>
+            <p class="food-item-desc" data-i18n="des2Desc">Belgian waffle topped with fresh strawberries and whipped cream.</p>
+          </div>
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="des3Name">Chocolate Cake</span>
+              <span class="food-item-price">5.00</span>
+            </div>
+            <p class="food-item-desc" data-i18n="des3Desc">Decadent three-layer chocolate cake with fudge frosting.</p>
+          </div>
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="des4Name">Gelato Ice Cream</span>
+              <span class="food-item-price">3.50</span>
+            </div>
+            <p class="food-item-desc" data-i18n="des4Desc">Vanilla / Chocolate / Strawberry / Green Tea / Coffee</p>
+          </div>
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="des5Name">Chocolate Pudding</span>
+              <span class="food-item-price">4.00</span>
+            </div>
+            <p class="food-item-desc" data-i18n="des5Desc">Silky smooth chocolate pudding topped with cream.</p>
+          </div>
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="des6Name">Strawberry Pudding</span>
+              <span class="food-item-price">4.00</span>
+            </div>
+            <p class="food-item-desc" data-i18n="des6Desc">Light and refreshing strawberry pudding with fresh fruit chunks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="new-footer" id="contact">
+    <div class="container reveal-on-scroll">
+      <div class="footer-grid">
+        <!-- Column 1: Brand -->
+        <div>
+          <div class="footer-brand">KOPI SENJA</div>
+          <p style="line-height: 1.7; max-width: 320px; font-size: 0.9rem; margin-top: 10px;">
+            Menyajikan seduhan kopi artisanal terbaik untuk menemani setiap momen hangat Anda. Nikmati kekayaan cita rasa nusantara di setiap cangkir.
+          </p>
+        </div>
+
+        <!-- Column 2: Contact Info -->
+        <div>
+          <div class="footer-title">Hubungi Kami</div>
+          <div class="footer-contact-item" style="flex-direction: row; align-items: center; gap: 12px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span style="color: #A89F95; font-weight: 400;">+62 812-3456-7890</span>
+          </div>
+          <div class="footer-contact-item" style="flex-direction: row; align-items: center; gap: 12px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            <span style="color: #A89F95; font-weight: 400;">@kopisenja.id</span>
+          </div>
+          <div class="footer-contact-item" style="flex-direction: row; align-items: flex-start; gap: 12px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span style="color: #A89F95; font-weight: 400; line-height: 1.5;">Jl. Senopati Dalam No. 18, Jakarta Selatan</span>
+          </div>
+        </div>
+
+        <!-- Column 3: Links -->
+        <div>
+          <div class="footer-title">Jelajahi</div>
+          <ul class="footer-links">
+            <li><a href="landing.html" data-i18n="navHome">Home</a></li>
+            <li><a href="about.html" data-i18n="navAbout">About Us</a></li>
+            <li><a href="Index.html" data-i18n="navMenu">Menu</a></li>
+            <li><a href="careers.html" data-i18n="navCareers">Karir</a></li>
+
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 <strong>KOPI SENJA</strong>. All Rights Reserved.</div>
+        <div data-i18n="footerText">Terinspirasi dari estetika modern editorial.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT TRANSLATION -->
+  <script>
+    const translations = {
+      id: {
+        navHome: "Home",
+        menuBread: "Bread & Pastries",
+        bread1Name: "Butter Croissant",
+        bread1Desc: "Classic flaky, buttery, and authentic French croissant.",
+        bread2Name: "Almond Croissant",
+        bread2Desc: "Twice-baked croissant filled with sweet almond frangipane.",
+        bread3Name: "Pain au Chocolat",
+        bread3Desc: "Buttery dough wrapped around rich, dark chocolate centers.",
+        bread4Name: "Cinnamon Roll",
+        bread4Desc: "Soft, fluffy dough baked with cinnamon and topped with cream cheese glaze.",
+        bread5Name: "Classic Bagel",
+        bread5Desc: "Toasted bagel served with your choice of plain or herb cream cheese.",
+        bread6Name: "Sourdough Toast",
+        bread6Desc: "Thick-cut sourdough bread served with artisanal butter and fruit jam.",
+        des1Name: "Chocolate Waffle",
+        des1Desc: "Warm Belgian waffle drizzled with melted dark chocolate.",
+        des2Name: "Strawberry Waffle",
+        des2Desc: "Belgian waffle topped with fresh strawberries and whipped cream.",
+        des3Name: "Chocolate Cake",
+        des3Desc: "Decadent three-layer chocolate cake with fudge frosting.",
+        des4Name: "Gelato Ice Cream",
+        des4Desc: "Vanilla / Chocolate / Strawberry / Green Tea / Coffee",
+        des5Name: "Chocolate Pudding",
+        des5Desc: "Silky smooth chocolate pudding topped with cream.",
+        des6Name: "Strawberry Pudding",
+        des6Desc: "Light and refreshing strawberry pudding with fresh fruit chunks.",
+        menuBread: "Roti & Pastri",
+        bread1Name: "Butter Croissant",
+        bread1Desc: "Croissant Prancis klasik yang renyah, berlapis, dan kaya rasa mentega.",
+        bread2Name: "Almond Croissant",
+        bread2Desc: "Croissant panggang ganda dengan isian frangipane almond manis.",
+        bread3Name: "Pain au Chocolat",
+        bread3Desc: "Adonan berlapis mentega yang membungkus lelehan cokelat hitam pekat.",
+        bread4Name: "Cinnamon Roll",
+        bread4Desc: "Adonan lembut beraroma kayu manis dengan topping krim keju.",
+        bread5Name: "Classic Bagel",
+        bread5Desc: "Bagel panggang disajikan dengan pilihan krim keju plain atau herb.",
+        bread6Name: "Sourdough Toast",
+        bread6Desc: "Roti sourdough panggang tebal disajikan dengan mentega artisanal dan selai buah.",
+        des1Name: "Chocolate Waffle",
+        des1Desc: "Wafel Belgia hangat dengan lumuran cokelat hitam leleh.",
+        des2Name: "Strawberry Waffle",
+        des2Desc: "Wafel Belgia dengan topping stroberi segar dan krim kocok.",
+        des3Name: "Chocolate Cake",
+        des3Desc: "Kue cokelat dekaden tiga lapis dengan frosting fudge pekat.",
+        des4Name: "Es Krim Gelato",
+        des4Desc: "Vanila / Cokelat / Stroberi / Teh Hijau / Kopi",
+        des5Name: "Chocolate Pudding",
+        des5Desc: "Puding cokelat lembut yang disajikan dengan krim.",
+        des6Name: "Strawberry Pudding",
+        des6Desc: "Puding stroberi yang menyegarkan dengan potongan buah asli.",
+        navAbout: "About Us",
+        navMenu: "Menu",
+        navCareers: "Karir",
+        navContact: "Kontak",
+        aboutTagline: "Cerita & Nilai Kami",
+        aboutHeading: "Merawat Dedikasi di Setiap Seduhan Kopi",
+        aboutLead: "KOPI SENJA lahir dari kecintaan tulus terhadap kekayaan biji kopi Indonesia dan kehangatan ruang perjumpaan manusia.",
+        lblLocal: "Biji Kopi Nusantara",
+        lblRoast: "Roastery In-House",
+        lblOutlets: "Jakarta & Sekitarnya",
+        lblScore: "Rating Kepuasan",
+        storyTitle1: "Kolaborasi Langsung Dengan Petani Mikro",
+        storyP1: "Kami tidak sekadar membeli green beans; kami menjalin persahabatan dengan petani di dataran tinggi Aceh Gayo, lereng Gunung Kerinci, Kintamani Bali, dan Tana Toraja. Praktik direct-trade memastikan petani menerima harga terbaik yang berkeadilan.",
+        storyP2: "Biji kopi dipetik merah saat matang sempurna, diproses basah maupun natural anaerobik untuk menonjolkan profil rasa alami yang jernih, manis, dan beraroma harum.",
+        storyTitle2: "Seni Sangrai Presisi di In-House Atelier",
+        storyP3: "Di atelier kami, setiap batch disangrai dengan mesin roasting berteknologi sirkulasi udara terkontrol. Kami memantau kurva suhu hingga detik pemecahan pertama (first crack) demi mengunci keaslian karakter rasa cokelat karamel dan buah tropis.",
+        storyP4: "Hasil sangrai diuji rasa (cupping) setiap pagi oleh tim sensory sebelum didistribusikan ke seluruh gerai dan toko online kami.",
+        valTagline: "Prinsip Kami",
+        valHeading: "Nilai yang Menuntun Setiap Cangkir",
+        valTitle1: "Ketelitian Rasa",
+        valDesc1: "Rasio gramasi air, suhu seduhan, dan kalibrasi espresso dipresisikan secara berkala untuk menjaga konsistensi cita rasa terbaik.",
+        valTitle2: "Keramahan Hati",
+        valDesc2: "Pelayanan kami berakar pada kehangatan persaudaraan nusantara. Setiap pelanggan disambut selayaknya sahabat lama.",
+        valTitle3: "Keberlanjutan Alam",
+        valDesc3: "Kami menggunakan kemasan ramah lingkungan dan mendaur ulang ampas kopi menjadi pupuk organik bagi perkebunan sekitar.",
+        footerText: "Terinspirasi dari estetika modern editorial.",
+        footerLink: "Buka Toko E-Commerce →"
+      },
+      en: {
+        navHome: "Home",
+        menuBread: "Bread & Pastries",
+        bread1Name: "Butter Croissant",
+        bread1Desc: "Classic flaky, buttery, and authentic French croissant.",
+        bread2Name: "Almond Croissant",
+        bread2Desc: "Twice-baked croissant filled with sweet almond frangipane.",
+        bread3Name: "Pain au Chocolat",
+        bread3Desc: "Buttery dough wrapped around rich, dark chocolate centers.",
+        bread4Name: "Cinnamon Roll",
+        bread4Desc: "Soft, fluffy dough baked with cinnamon and topped with cream cheese glaze.",
+        bread5Name: "Classic Bagel",
+        bread5Desc: "Toasted bagel served with your choice of plain or herb cream cheese.",
+        bread6Name: "Sourdough Toast",
+        bread6Desc: "Thick-cut sourdough bread served with artisanal butter and fruit jam.",
+        des1Name: "Chocolate Waffle",
+        des1Desc: "Warm Belgian waffle drizzled with melted dark chocolate.",
+        des2Name: "Strawberry Waffle",
+        des2Desc: "Belgian waffle topped with fresh strawberries and whipped cream.",
+        des3Name: "Chocolate Cake",
+        des3Desc: "Decadent three-layer chocolate cake with fudge frosting.",
+        des4Name: "Gelato Ice Cream",
+        des4Desc: "Vanilla / Chocolate / Strawberry / Green Tea / Coffee",
+        des5Name: "Chocolate Pudding",
+        des5Desc: "Silky smooth chocolate pudding topped with cream.",
+        des6Name: "Strawberry Pudding",
+        des6Desc: "Light and refreshing strawberry pudding with fresh fruit chunks.",
+        navAbout: "About Us",
+        navMenu: "Menu",
+        navCareers: "Careers",
+        navContact: "Contact",
+        aboutTagline: "Our Story & Values",
+        aboutHeading: "Devoted to the Craft in Every Brew",
+        aboutLead: "KOPI SENJA was born out of a genuine appreciation for Indonesian coffee heritage and the warmth of gathering together.",
+        lblLocal: "Indonesian Origin Beans",
+        lblRoast: "In-House Roastery",
+        lblOutlets: "Greater Jakarta Locations",
+        lblScore: "Customer Rating",
+        storyTitle1: "Direct Partnerships with Micro-Farmers",
+        storyP1: "We do not merely buy green beans; we build genuine relationships with farmers in Aceh Gayo, Mount Kerinci, Kintamani Bali, and Toraja. Direct-trade principles guarantee fair premium prices for farmers.",
+        storyP2: "Cherries are harvested only when fully ripe, processed washed or natural anaerobic to accentuate clear, sweet, and floral cup profiles.",
+        storyTitle2: "Precision Roasting at our In-House Atelier",
+        storyP3: "In our atelier, every roast profile is calibrated with controlled convection roasters. We track thermal curves right up to first crack to preserve authentic notes of caramel, chocolate, and tropical fruit.",
+        storyP4: "Every batch undergoes rigorous morning cupping sessions by our sensory specialists before reaching our espresso bars and online store.",
+        valTagline: "Our Principles",
+        valHeading: "Values Guiding Every Cup",
+        valTitle1: "Craft & Precision",
+        valDesc1: "Water ratio, brewing temperature, and espresso calibration are constantly monitored for exceptional cup consistency.",
+        valTitle2: "Warm Hospitality",
+        valDesc2: "Our service stems from genuine Indonesian warmth. Every guest is welcomed like a cherished friend.",
+        valTitle3: "Sustainability",
+        valDesc3: "We use eco-conscious packaging and recycle coffee grounds into natural fertilizer for surrounding gardens.",
+        footerText: "Inspired by clean modern editorial aesthetics.",
+        footerLink: "Open E-Commerce Store →"
+      }
+    };
+
+    function switchLanguage(lang) {
+      try {
+        localStorage.setItem('kopi_senja_lang', lang);
+      } catch (e) {}
+      applyLanguage(lang);
+    }
+
+    function applyLanguage(lang) {
+      const dict = translations[lang] || translations.id;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.textContent = dict[key];
+      });
+
+      const btnEn = document.getElementById('langBtnEn');
+      const btnId = document.getElementById('langBtnId');
+      if (lang === 'en') {
+        if (btnEn) btnEn.classList.add('active');
+        if (btnId) btnId.classList.remove('active');
+      } else {
+        if (btnId) btnId.classList.add('active');
+        if (btnEn) btnEn.classList.remove('active');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      let saved = 'id';
+      try { saved = localStorage.getItem('kopi_senja_lang') || 'id'; } catch (e) {}
+      applyLanguage(saved);
+    });
+  </script>
+
+  <!-- PAGE TRANSITION SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          // Only animate for internal HTML links
+          if (href && href.endsWith('.html') && !this.hasAttribute('target')) {
+            e.preventDefault();
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+              window.location.href = href;
+            }, 450); // Match animation length to feel responsive
+          }
+        });
+      });
+    });
+
+    // Fix for Safari/Firefox bfcache (back button)
+    window.addEventListener('pageshow', (event) => {
+      if (event.persisted) {
+        document.body.classList.remove('fade-out');
+      }
+    });
+  </script>
+
+  <!-- GLIDER SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navMenu = document.querySelector('.nav-center-menu');
+      const glider = document.getElementById('navGlider');
+      const navLinks = navMenu ? navMenu.querySelectorAll('a') : [];
+
+      function positionGliderTo(linkEl) {
+        if (!glider || !linkEl || !navMenu) return;
+        const menuRect = navMenu.getBoundingClientRect();
+        const linkRect = linkEl.getBoundingClientRect();
+        const leftOffset = linkRect.left - menuRect.left;
+        const width = linkRect.width;
+
+        glider.style.opacity = '1';
+        glider.style.width = `${width}px`;
+        glider.style.transform = `translateX(${leftOffset}px)`;
+      }
+
+      const activeLink = navMenu ? navMenu.querySelector('a.active') : null;
+      if (activeLink) {
+        setTimeout(() => positionGliderTo(activeLink), 120);
+      }
+
+      navLinks.forEach(link => {
+        link.addEventListener('mouseenter', () => positionGliderTo(link));
+      });
+
+      if (navMenu) {
+        navMenu.addEventListener('mouseleave', () => {
+          const currentActive = navMenu.querySelector('a.active');
+          if (currentActive) {
+            positionGliderTo(currentActive);
+          } else if (glider) {
+            glider.style.opacity = '0';
+          }
+        });
+      }
+
+      window.addEventListener('resize', () => {
+        const currentActive = navMenu ? navMenu.querySelector('a.active') : null;
+        if (currentActive) positionGliderTo(currentActive);
+      });
+    });
+  </script>
+
+</body>
+</html>
