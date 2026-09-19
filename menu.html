@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us — KOPI SENJA</title>
-  <meta name="description" content="Tentang Kopi Senja: Dedikasi seduhan artisanal, kemitraan petani mikro nusantara, dan kurva sangrai presisi.">
+  <title>Menu — KOPI SENJA</title>
+  <meta name="description" content="Menu lengkap Kopi Senja: Pilihan biji kopi terbaik, minuman non-kopi segar, dan aneka roti pilihan.">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
     :root {
       --primary: #2B211C;
       --secondary: #6B4F3A;
-      --bg: #F5EFEB;
+      --bg: #FFFFFF; /* Diubah dari beige ke putih bersih */
       --surface: #FFFDF9;
       --accent: #C69C6D;
       --text: #2A2521;
@@ -57,7 +57,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(245, 239, 235, 0.94);
+      background: rgba(255, 255, 255, 0.94); /* Disesuaikan ke putih */
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(43, 33, 28, 0.08);
@@ -436,6 +436,181 @@
         gap: 16px;
       }
     }
+    /* MINIMAL MENU STYLES */
+    .minimal-menu {
+      padding: 80px 32px;
+      background-color: #FFF;
+      color: #333;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .menu-cat-section {
+      display: flex;
+      margin-bottom: 80px;
+      gap: 40px;
+    }
+
+    .cat-sidebar {
+      width: 120px;
+      flex-shrink: 0;
+      border-right: 1px solid #EAEAEA;
+      padding-right: 20px;
+    }
+
+    .cat-sidebar h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: #000;
+      margin-bottom: 30px;
+    }
+
+    .cat-icon-list {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .cat-icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: #999;
+      font-size: 0.8rem;
+    }
+
+    .cat-icon-item svg {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 8px;
+      stroke: #999;
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .cat-content {
+      flex: 1;
+    }
+
+    .drink-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px 30px;
+    }
+
+    .drink-item {
+      text-align: left;
+    }
+
+    .drink-img-wrap {
+      width: 100%;
+      aspect-ratio: 1;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .drink-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+
+    .drink-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: baseline;
+      margin-bottom: 8px;
+      gap: 6px;
+    }
+
+    .drink-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .drink-price {
+      font-size: 0.85rem;
+      color: #999;
+    }
+    
+    .drink-price::before {
+      content: "/ ";
+      color: #CCC;
+    }
+
+    .drink-desc {
+      font-size: 0.8rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .food-section {
+      display: flex;
+      gap: 60px;
+      margin-bottom: 80px;
+      margin-top: 40px;
+    }
+
+    .food-col {
+      flex: 1;
+    }
+
+    .food-col h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: #000;
+      margin-bottom: 30px;
+    }
+
+    .food-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .food-item-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+
+    .food-item-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .food-item-price {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .food-item-desc {
+      font-size: 0.8rem;
+      color: #888;
+      line-height: 1.4;
+      padding-right: 20px;
+    }
+
+    @media (max-width: 960px) {
+      .drink-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 20px; }
+      .menu-cat-section { flex-direction: column; gap: 20px; }
+      .cat-sidebar { width: 100%; border-right: none; border-bottom: 1px solid #EAEAEA; padding-bottom: 20px; display: flex; align-items: center; justify-content: space-between; }
+      .cat-sidebar h2 { margin-bottom: 0; }
+      .cat-icon-list { flex-direction: row; gap: 20px; }
+      .food-section { flex-direction: column; gap: 40px; }
+    }
+    @media (max-width: 500px) {
+      .drink-grid { grid-template-columns: 1fr; }
+    }
   </style>
 
   
@@ -476,8 +651,8 @@
 
       <ul class="nav-center-menu">
         <li><a href="index.html" data-i18n="navHome">Home</a></li>
-        <li><a href="about.html" class="active" data-i18n="navAbout">About Us</a></li>
-        <li><a href="menu.html" data-i18n="navMenu">Menu</a></li>
+        <li><a href="about.html" data-i18n="navAbout">About Us</a></li>
+        <li><a href="menu.html" class="active" data-i18n="navMenu">Menu</a></li>
         <li><a href="careers.html" data-i18n="navCareers">Karir</a></li>
 
         <span class="nav-glider" id="navGlider"></span>
@@ -494,61 +669,270 @@
   </header>
 
   <!-- MAIN -->
-  <main>
-    <section style="position: relative; width: 100%; min-height: 75vh; display: flex; align-items: flex-start; padding-top: 120px; background: url('assets/cafe-interior-new.png') center/cover no-repeat; margin-bottom: 0;">
-      <!-- Overlay for text readability -->
-      <div style="position: absolute; inset: 0; background: rgba(20, 15, 10, 0.65); z-index: 1;"></div>
-      
-      <div class="container" style="position: relative; z-index: 2; padding: 0 32px;">
-        <div style="max-width: 680px; margin: 0 auto; text-align: center;">
-          <h1 style="font-family: var(--font-sans); font-size: clamp(1.5rem, 3vw, 2.5rem); color: #FFF; font-weight: 400; line-height: 1.25; margin: 0;" data-i18n="aboutTagline">Cerita & Nilai Kami</h1>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- STORY 1 -->
-    <section class="container story-grid">
-      <div class="story-content">
-        <h2 data-i18n="storyTitle1">Kolaborasi Langsung Dengan Petani Mikro</h2>
-        <p data-i18n="storyP1">Kami tidak sekadar membeli green beans; kami menjalin persahabatan dengan petani di dataran tinggi Aceh Gayo, lereng Gunung Kerinci, Kintamani Bali, dan Tana Toraja. Praktik direct-trade memastikan petani menerima harga terbaik yang berkeadilan.</p>
-        <p data-i18n="storyP2">Biji kopi dipetik merah saat matang sempurna, diproses basah maupun natural anaerobik untuk menonjolkan profil rasa alami yang jernih, manis, dan beraroma harum.</p>
-      </div>
-      <div class="story-img-wrap">
-        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=900&auto=format&fit=crop&q=80" alt="Petik Kopi Nusantara" class="story-img">
-      </div>
-    </section>
-
-    <!-- STORY 2 -->
-    <section class="container story-grid">
-      <div class="story-img-wrap">
-        <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=900&auto=format&fit=crop&q=80" alt="Roasting Kopi Senja" class="story-img">
-      </div>
-      <div class="story-content">
-        <h2 data-i18n="storyTitle2">Seni Sangrai Presisi di In-House Atelier</h2>
-        <p data-i18n="storyP3">Di atelier kami, setiap batch disangrai dengan mesin roasting berteknologi sirkulasi udara terkontrol. Kami memantau kurva suhu hingga detik pemecahan pertama (first crack) demi mengunci keaslian karakter rasa cokelat karamel dan buah tropis.</p>
-        <p data-i18n="storyP4">Hasil sangrai diuji rasa (cupping) setiap pagi oleh tim sensory sebelum didistribusikan ke seluruh gerai dan toko online kami.</p>
-      </div>
-    </section>
-
-    <!-- EXPERT SECTION -->
-    <section class="expert-section container">
-      <div class="expert-card">
-        <div class="expert-img-wrap">
-          <img src="assets/user-photo.jpg" alt="Foto Anda" class="expert-img">
-          <div class="expert-badge">
-            <strong data-i18n="expertName">Rakha Zuhdi Naufal</strong>
-            <span data-i18n="expertTitle">Expert Kopi Senja</span>
+  <main class="minimal-menu" style="background-color: #FFF; width: 100%;">
+    <!-- HOT SECTION -->
+    <div class="menu-cat-section">
+      <div class="cat-sidebar">
+        <h2>hot</h2>
+        <div class="cat-icon-list">
+          <div class="cat-icon-item">
+            <svg viewBox="0 0 24 24"><path d="M4 10h16M7 10V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4M5 20h14a2 2 0 0 0 2-2v-5H3v5a2 2 0 0 0 2 2z"/></svg>
+            Moka Pot
+          </div>
+          <div class="cat-icon-item">
+            <svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M6 10h12M12 2v8"/></svg>
+            French Press
+          </div>
+          <div class="cat-icon-item">
+            <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>
+            Espresso
           </div>
         </div>
-        <div class="expert-content">
-          <h2 class="expert-title" data-i18n="expertHeading">Our Experts Says</h2>
-          <p class="expert-desc" data-i18n="expertDesc">
-            Kami mentransformasi visi kami dalam menawarkan kopi berkualitas tinggi ke pelanggan menjadi sebuah prestasi yang bisa dicapai. Kopi Senja adalah brand kopi yang sangat berkomitmen dalam semua aspek penyajian kopi. Misi kami lebih dari sekadar menyajikan kopi berkualitas, melainkan menciptakan dampak ke komunitas melalui pembangunan cabang strategis dan partnership kreatif. Kunci dari kesuksesan kami ada pada kerjasama kolaboratif sebagai satu kesatuan.
-          </p>
+      </div>
+      <div class="cat-content">
+        <div class="drink-grid">
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup1.png" alt="Espresso" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Espresso</span>
+              <span class="drink-price">2.00</span>
+            </div>
+            <p class="drink-desc">Consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          </div>
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup2.png" alt="Double Espresso" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Double Espresso</span>
+              <span class="drink-price">2.50</span>
+            </div>
+            <p class="drink-desc">Reprehenderit in voluptate velit esse cillum dolore eu.</p>
+          </div>
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup3.png" alt="Americano" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Americano</span>
+              <span class="drink-price">3.00</span>
+            </div>
+            <p class="drink-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup4.png" alt="Flat White" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Flat White</span>
+              <span class="drink-price">3.50</span>
+            </div>
+            <p class="drink-desc">Quis nostrud exercitation ullamco laboris nisi.</p>
+          </div>
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup5.png" alt="Cafe Latte" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Cafe Latte</span>
+              <span class="drink-price">4.00</span>
+            </div>
+            <p class="drink-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup6.png" alt="Macchiato" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Macchiato</span>
+              <span class="drink-price">3.50</span>
+            </div>
+            <p class="drink-desc">Reprehenderit in voluptate velit esse cillum dolore eu.</p>
+          </div>
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup7.png" alt="Cappuccino" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Cappuccino</span>
+              <span class="drink-price">3.00</span>
+            </div>
+            <p class="drink-desc">Quis nostrud exercitation ullamco laboris nisi.</p>
+          </div>
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup8.png" alt="Frappuccino" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Frappuccino</span>
+              <span class="drink-price">4.50</span>
+            </div>
+            <p class="drink-desc">Consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- COLD SECTION -->
+    <div class="menu-cat-section">
+      <div class="cat-sidebar">
+        <h2>cold</h2>
+        <div class="cat-icon-list">
+          <div class="cat-icon-item">
+            <svg viewBox="0 0 24 24"><path d="M5 4h14l-1 12H6L5 4zM9 16v4M15 16v4M7 20h10"/></svg>
+            Aeropress
+          </div>
+          <div class="cat-icon-item">
+            <svg viewBox="0 0 24 24"><path d="M4 6h16M5 6v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6M9 2v4M15 2v4"/></svg>
+            Cold Brew
+          </div>
+        </div>
+      </div>
+      <div class="cat-content">
+        <div class="drink-grid">
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup9.png" alt="Affogato" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Affogato</span>
+              <span class="drink-price">6.00</span>
+            </div>
+            <p class="drink-desc">Reprehenderit in voluptate velit esse cillum dolore eu.</p>
+          </div>
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup10.png" alt="Macchiato Cold" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Macchiato</span>
+              <span class="drink-price">4.50</span>
+            </div>
+            <p class="drink-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup11.png" alt="Cappuccino Cold" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Cappuccino</span>
+              <span class="drink-price">5.00</span>
+            </div>
+            <p class="drink-desc">Quis nostrud exercitation ullamco laboris nisi.</p>
+          </div>
+          <div class="drink-item">
+            <div class="drink-img-wrap">
+              <img src="assets/coffee-cups/cup12.png" alt="Frappuccino Cold" class="drink-img">
+            </div>
+            <div class="drink-header">
+              <span class="drink-name">Frappuccino</span>
+              <span class="drink-price">5.50</span>
+            </div>
+            <p class="drink-desc">Consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOD & DESSERT SECTION -->
+    <div class="food-section">
+      <div class="food-col">
+        <h2>bread</h2>
+        <div class="food-list">
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="bread1Name">Butter Croissant</span>
+              <span class="food-item-price">4.50</span>
+            </div>
+            <p class="food-item-desc" data-i18n="bread1Desc">Classic flaky, buttery, and authentic French croissant.</p>
+          </div>
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="bread2Name">Almond Croissant</span>
+              <span class="food-item-price">5.50</span>
+            </div>
+            <p class="food-item-desc" data-i18n="bread2Desc">Twice-baked croissant filled with sweet almond frangipane.</p>
+          </div>
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="bread3Name">Pain au Chocolat</span>
+              <span class="food-item-price">5.00</span>
+            </div>
+            <p class="food-item-desc" data-i18n="bread3Desc">Buttery dough wrapped around rich, dark chocolate centers.</p>
+          </div>
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="bread4Name">Cinnamon Roll</span>
+              <span class="food-item-price">4.00</span>
+            </div>
+            <p class="food-item-desc" data-i18n="bread4Desc">Soft, fluffy dough baked with cinnamon and topped with cream cheese glaze.</p>
+          </div>
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="bread5Name">Classic Bagel</span>
+              <span class="food-item-price">3.50</span>
+            </div>
+            <p class="food-item-desc" data-i18n="bread5Desc">Toasted bagel served with your choice of plain or herb cream cheese.</p>
+          </div>
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="bread6Name">Sourdough Toast</span>
+              <span class="food-item-price">3.00</span>
+            </div>
+            <p class="food-item-desc" data-i18n="bread6Desc">Thick-cut sourdough bread served with artisanal butter and fruit jam.</p>
+          </div>
+        </div>
+      </div>
+      <div class="food-col">
+        <h2>dessert</h2>
+        <div class="food-list">
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="des1Name">Chocolate Waffle</span>
+              <span class="food-item-price">4.50</span>
+            </div>
+            <p class="food-item-desc" data-i18n="des1Desc">Warm Belgian waffle drizzled with melted dark chocolate.</p>
+          </div>
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="des2Name">Strawberry Waffle</span>
+              <span class="food-item-price">5.50</span>
+            </div>
+            <p class="food-item-desc" data-i18n="des2Desc">Belgian waffle topped with fresh strawberries and whipped cream.</p>
+          </div>
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="des3Name">Chocolate Cake</span>
+              <span class="food-item-price">5.00</span>
+            </div>
+            <p class="food-item-desc" data-i18n="des3Desc">Decadent three-layer chocolate cake with fudge frosting.</p>
+          </div>
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="des4Name">Gelato Ice Cream</span>
+              <span class="food-item-price">3.50</span>
+            </div>
+            <p class="food-item-desc" data-i18n="des4Desc">Vanilla / Chocolate / Strawberry / Green Tea / Coffee</p>
+          </div>
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="des5Name">Chocolate Pudding</span>
+              <span class="food-item-price">4.00</span>
+            </div>
+            <p class="food-item-desc" data-i18n="des5Desc">Silky smooth chocolate pudding topped with cream.</p>
+          </div>
+          <div class="food-item">
+            <div class="food-item-header">
+              <span class="food-item-name" data-i18n="des6Name">Strawberry Pudding</span>
+              <span class="food-item-price">4.00</span>
+            </div>
+            <p class="food-item-desc" data-i18n="des6Desc">Light and refreshing strawberry pudding with fresh fruit chunks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <!-- FOOTER -->
@@ -605,6 +989,56 @@
     const translations = {
       id: {
         navHome: "Home",
+        menuBread: "Bread & Pastries",
+        bread1Name: "Butter Croissant",
+        bread1Desc: "Classic flaky, buttery, and authentic French croissant.",
+        bread2Name: "Almond Croissant",
+        bread2Desc: "Twice-baked croissant filled with sweet almond frangipane.",
+        bread3Name: "Pain au Chocolat",
+        bread3Desc: "Buttery dough wrapped around rich, dark chocolate centers.",
+        bread4Name: "Cinnamon Roll",
+        bread4Desc: "Soft, fluffy dough baked with cinnamon and topped with cream cheese glaze.",
+        bread5Name: "Classic Bagel",
+        bread5Desc: "Toasted bagel served with your choice of plain or herb cream cheese.",
+        bread6Name: "Sourdough Toast",
+        bread6Desc: "Thick-cut sourdough bread served with artisanal butter and fruit jam.",
+        des1Name: "Chocolate Waffle",
+        des1Desc: "Warm Belgian waffle drizzled with melted dark chocolate.",
+        des2Name: "Strawberry Waffle",
+        des2Desc: "Belgian waffle topped with fresh strawberries and whipped cream.",
+        des3Name: "Chocolate Cake",
+        des3Desc: "Decadent three-layer chocolate cake with fudge frosting.",
+        des4Name: "Gelato Ice Cream",
+        des4Desc: "Vanilla / Chocolate / Strawberry / Green Tea / Coffee",
+        des5Name: "Chocolate Pudding",
+        des5Desc: "Silky smooth chocolate pudding topped with cream.",
+        des6Name: "Strawberry Pudding",
+        des6Desc: "Light and refreshing strawberry pudding with fresh fruit chunks.",
+        menuBread: "Roti & Pastri",
+        bread1Name: "Butter Croissant",
+        bread1Desc: "Croissant Prancis klasik yang renyah, berlapis, dan kaya rasa mentega.",
+        bread2Name: "Almond Croissant",
+        bread2Desc: "Croissant panggang ganda dengan isian frangipane almond manis.",
+        bread3Name: "Pain au Chocolat",
+        bread3Desc: "Adonan berlapis mentega yang membungkus lelehan cokelat hitam pekat.",
+        bread4Name: "Cinnamon Roll",
+        bread4Desc: "Adonan lembut beraroma kayu manis dengan topping krim keju.",
+        bread5Name: "Classic Bagel",
+        bread5Desc: "Bagel panggang disajikan dengan pilihan krim keju plain atau herb.",
+        bread6Name: "Sourdough Toast",
+        bread6Desc: "Roti sourdough panggang tebal disajikan dengan mentega artisanal dan selai buah.",
+        des1Name: "Chocolate Waffle",
+        des1Desc: "Wafel Belgia hangat dengan lumuran cokelat hitam leleh.",
+        des2Name: "Strawberry Waffle",
+        des2Desc: "Wafel Belgia dengan topping stroberi segar dan krim kocok.",
+        des3Name: "Chocolate Cake",
+        des3Desc: "Kue cokelat dekaden tiga lapis dengan frosting fudge pekat.",
+        des4Name: "Es Krim Gelato",
+        des4Desc: "Vanila / Cokelat / Stroberi / Teh Hijau / Kopi",
+        des5Name: "Chocolate Pudding",
+        des5Desc: "Puding cokelat lembut yang disajikan dengan krim.",
+        des6Name: "Strawberry Pudding",
+        des6Desc: "Puding stroberi yang menyegarkan dengan potongan buah asli.",
         navAbout: "About Us",
         navMenu: "Menu",
         navCareers: "Karir",
@@ -635,6 +1069,31 @@
       },
       en: {
         navHome: "Home",
+        menuBread: "Bread & Pastries",
+        bread1Name: "Butter Croissant",
+        bread1Desc: "Classic flaky, buttery, and authentic French croissant.",
+        bread2Name: "Almond Croissant",
+        bread2Desc: "Twice-baked croissant filled with sweet almond frangipane.",
+        bread3Name: "Pain au Chocolat",
+        bread3Desc: "Buttery dough wrapped around rich, dark chocolate centers.",
+        bread4Name: "Cinnamon Roll",
+        bread4Desc: "Soft, fluffy dough baked with cinnamon and topped with cream cheese glaze.",
+        bread5Name: "Classic Bagel",
+        bread5Desc: "Toasted bagel served with your choice of plain or herb cream cheese.",
+        bread6Name: "Sourdough Toast",
+        bread6Desc: "Thick-cut sourdough bread served with artisanal butter and fruit jam.",
+        des1Name: "Chocolate Waffle",
+        des1Desc: "Warm Belgian waffle drizzled with melted dark chocolate.",
+        des2Name: "Strawberry Waffle",
+        des2Desc: "Belgian waffle topped with fresh strawberries and whipped cream.",
+        des3Name: "Chocolate Cake",
+        des3Desc: "Decadent three-layer chocolate cake with fudge frosting.",
+        des4Name: "Gelato Ice Cream",
+        des4Desc: "Vanilla / Chocolate / Strawberry / Green Tea / Coffee",
+        des5Name: "Chocolate Pudding",
+        des5Desc: "Silky smooth chocolate pudding topped with cream.",
+        des6Name: "Strawberry Pudding",
+        des6Desc: "Light and refreshing strawberry pudding with fresh fruit chunks.",
         navAbout: "About Us",
         navMenu: "Menu",
         navCareers: "Careers",
