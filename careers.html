@@ -603,7 +603,95 @@
       .perks-grid { grid-template-columns: repeat(2, 1fr); }
       .jobs-grid { grid-template-columns: 1fr; }
     }
-  </style>
+  
+    /* Mobile Responsiveness Overrides */
+    .mobile-menu-toggle {
+      display: none;
+      color: var(--primary);
+      padding: 4px;
+    }
+    
+    @media (max-width: 900px) {
+      .mobile-menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .nav-inner {
+        flex-wrap: wrap;
+      }
+      .nav-center-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 4;
+        background: rgba(246, 241, 232, 0.98);
+        padding: 20px 0;
+        margin-top: 16px;
+        box-shadow: 0 12px 24px rgba(43, 33, 28, 0.08);
+        border-top: 1px solid rgba(43,33,28,0.06);
+        border-radius: 0 0 16px 16px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 99;
+      }
+      .nav-center-menu.is-open {
+        display: flex;
+        animation: fadeDown 0.3s ease;
+      }
+      @keyframes fadeDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .nav-glider {
+        display: none !important;
+      }
+      
+      /* Specific Overrides for Pages */
+      .hero-watermark {
+        font-size: 15vw !important;
+        white-space: normal !important;
+        line-height: 1 !important;
+        opacity: 0.03 !important;
+      }
+      .floating-bean {
+        display: none !important;
+      }
+      .app-preview-wrapper img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+      .drink-img {
+        max-width: 100%;
+        aspect-ratio: 1;
+        object-fit: contain;
+      }
+      .timeline-step {
+        padding-left: 20px !important;
+      }
+      .timeline-number {
+        left: -15px !important;
+      }
+      .step-header {
+        scroll-margin-top: 100px; /* Fix for sticky header */
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .menu-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .about-hero {
+        padding: 120px 20px 60px !important;
+      }
+      .filter-buttons {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+    }
+</style>
+
 
   
   <style>
@@ -621,7 +709,95 @@
       filter: blur(2px) !important;
       transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1) !important;
     }
-  </style>
+  
+    /* Mobile Responsiveness Overrides */
+    .mobile-menu-toggle {
+      display: none;
+      color: var(--primary);
+      padding: 4px;
+    }
+    
+    @media (max-width: 900px) {
+      .mobile-menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .nav-inner {
+        flex-wrap: wrap;
+      }
+      .nav-center-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 4;
+        background: rgba(246, 241, 232, 0.98);
+        padding: 20px 0;
+        margin-top: 16px;
+        box-shadow: 0 12px 24px rgba(43, 33, 28, 0.08);
+        border-top: 1px solid rgba(43,33,28,0.06);
+        border-radius: 0 0 16px 16px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 99;
+      }
+      .nav-center-menu.is-open {
+        display: flex;
+        animation: fadeDown 0.3s ease;
+      }
+      @keyframes fadeDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .nav-glider {
+        display: none !important;
+      }
+      
+      /* Specific Overrides for Pages */
+      .hero-watermark {
+        font-size: 15vw !important;
+        white-space: normal !important;
+        line-height: 1 !important;
+        opacity: 0.03 !important;
+      }
+      .floating-bean {
+        display: none !important;
+      }
+      .app-preview-wrapper img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+      .drink-img {
+        max-width: 100%;
+        aspect-ratio: 1;
+        object-fit: contain;
+      }
+      .timeline-step {
+        padding-left: 20px !important;
+      }
+      .timeline-number {
+        left: -15px !important;
+      }
+      .step-header {
+        scroll-margin-top: 100px; /* Fix for sticky header */
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .menu-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .about-hero {
+        padding: 120px 20px 60px !important;
+      }
+      .filter-buttons {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+    }
+</style>
+
 </head>
 <body>
 
@@ -865,7 +1041,95 @@
         gap: 16px;
       }
     }
-  </style>
+  
+    /* Mobile Responsiveness Overrides */
+    .mobile-menu-toggle {
+      display: none;
+      color: var(--primary);
+      padding: 4px;
+    }
+    
+    @media (max-width: 900px) {
+      .mobile-menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .nav-inner {
+        flex-wrap: wrap;
+      }
+      .nav-center-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 4;
+        background: rgba(246, 241, 232, 0.98);
+        padding: 20px 0;
+        margin-top: 16px;
+        box-shadow: 0 12px 24px rgba(43, 33, 28, 0.08);
+        border-top: 1px solid rgba(43,33,28,0.06);
+        border-radius: 0 0 16px 16px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 99;
+      }
+      .nav-center-menu.is-open {
+        display: flex;
+        animation: fadeDown 0.3s ease;
+      }
+      @keyframes fadeDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .nav-glider {
+        display: none !important;
+      }
+      
+      /* Specific Overrides for Pages */
+      .hero-watermark {
+        font-size: 15vw !important;
+        white-space: normal !important;
+        line-height: 1 !important;
+        opacity: 0.03 !important;
+      }
+      .floating-bean {
+        display: none !important;
+      }
+      .app-preview-wrapper img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+      .drink-img {
+        max-width: 100%;
+        aspect-ratio: 1;
+        object-fit: contain;
+      }
+      .timeline-step {
+        padding-left: 20px !important;
+      }
+      .timeline-number {
+        left: -15px !important;
+      }
+      .step-header {
+        scroll-margin-top: 100px; /* Fix for sticky header */
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .menu-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .about-hero {
+        padding: 120px 20px 60px !important;
+      }
+      .filter-buttons {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+    }
+</style>
+
 
   <footer class="new-footer live-server-trigger" id="contact">
     <div class="container">
@@ -1095,5 +1359,19 @@
     });
   </script>
 
+
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const navMenu = document.querySelector('.nav-center-menu');
+      if(mobileBtn && navMenu) {
+        mobileBtn.addEventListener('click', () => {
+          navMenu.classList.toggle('is-open');
+        });
+      }
+    });
+  </script>
 </body>
+
 </html>
